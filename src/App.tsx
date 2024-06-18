@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import { MantineProvider } from '@mantine/core'
 import './App.css';
+import '@mantine/core/styles.css';
+import '@mantine/carousel/styles.css';
+import '@mantine/notifications/styles.css';
+import ProductDetails from './product-details'
+import { Notifications } from '@mantine/notifications';
 
 function App() {
+
+
   return (
+    <MantineProvider>
+            <Notifications position='top-right' />
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ <ProductDetails></ProductDetails>
+    
     </div>
-  );
-}
+    </MantineProvider>
+  )
+};
 
 export default App;
